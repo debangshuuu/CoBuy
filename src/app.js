@@ -7,6 +7,7 @@
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const path = require('path');
 const { testConnection } = require('./db/connection');
 
 // Load environment configuration
@@ -21,9 +22,11 @@ const PORT = process.env.PORT || 5000;
 //    running on a different port can communicate with this API.
 // 2. express.json(): Built-in body parser that converts raw incoming JSON payloads
 //    in the HTTP request body into accessible JavaScript objects on req.body.
+// 3. express.static(): Serves Debangshu's SPA frontend from src/client.
 // ----------------------------------------------------------------------------
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(__dirname, 'client')));
 
 // ----------------------------------------------------------------------------
 // Health Check Route: GET /health
