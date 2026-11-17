@@ -9,6 +9,11 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const path = require('path');
 const { testConnection } = require('./db/connection');
+const prisma = require('./db/prisma');
+const authRoutes = require('./auth/authRoutes');
+const restaurantRoutes = require('./profiles/restaurantRoutes');
+const supplierRoutes = require('./profiles/supplierRoutes');
+const discoveryRoutes = require('./pools/discoveryRoutes');
 
 // Load environment configuration
 dotenv.config();
@@ -27,6 +32,14 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'client')));
+
+// ----------------------------------------------------------------------------
+// API Routes:
+// ----------------------------------------------------------------------------
+app.use('/api/users', authRoutes);
+app.use('/api/restaurants', restaurantRoutes);
+app.use('/api/suppliers', supplierRoutes);
+app.use('/api/pools', discoveryRoutes);
 
 // ----------------------------------------------------------------------------
 // Health Check Route: GET /health
