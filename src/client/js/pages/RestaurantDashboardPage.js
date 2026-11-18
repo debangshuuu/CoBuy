@@ -21,7 +21,7 @@ export async function renderRestaurantDashboardPage() {
       <!-- Welcome Header -->
       <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem;">
         <div>
-          <h1 style="font-size: 1.85rem; font-weight: 800;">🍳 Kitchen Procurement Dashboard</h1>
+          <h1 style="font-size: 1.85rem; font-weight: 800;">Kitchen Procurement Dashboard</h1>
           <p style="color: var(--text-secondary); margin-top: 0.25rem;">
             Location: <strong>${store.location.address}</strong> (≤ 5.0 km cluster active)
           </p>
@@ -61,7 +61,7 @@ export async function renderRestaurantDashboardPage() {
       <!-- Featured Nearby Pools -->
       <div style="margin-bottom: 2.5rem;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
-          <h2 style="font-size: 1.25rem; font-weight: 700;">📍 Buying Pools Near Your Kitchen</h2>
+          <h2 style="font-size: 1.25rem; font-weight: 700;">Buying Pools Near Your Kitchen</h2>
           <a href="#/pools" style="color: var(--primary); font-weight: 600; text-decoration: none;">View All Pools (${pools.length})</a>
         </div>
 
@@ -71,9 +71,8 @@ export async function renderRestaurantDashboardPage() {
       </div>
 
       <!-- Quick Concept Explainer for Viva -->
-      <div class="card" style="background: linear-gradient(135deg, #f0fdf4, #eef2ff); border-color: var(--primary-border);">
+      <div class="card" style="border-color: var(--border);">
         <div style="display: flex; gap: 1rem; align-items: center;">
-          <div style="font-size: 2rem;">💡</div>
           <div>
             <h4 style="font-weight: 700; color: var(--text-primary); margin-bottom: 0.25rem;">
               How CoBuy Group Buying Works (The 5 km Cluster Rule)

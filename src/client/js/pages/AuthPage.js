@@ -14,7 +14,7 @@ export function renderAuthPage() {
       <div class="card" style="padding: 2.25rem;">
         <div style="text-align: center; margin-bottom: 2rem;">
           <h1 style="font-size: 1.75rem; font-weight: 800; color: var(--text-primary);">
-            🥦 Welcome to CoBuy
+            Welcome to CoBuy
           </h1>
           <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">
             B2B localized group buying for cloud kitchens & wholesale suppliers
@@ -73,7 +73,7 @@ export function renderAuthPage() {
               <label style="border: 1px solid var(--border-dark); padding: 0.75rem; border-radius: var(--radius-md); cursor: pointer; display: flex; align-items: center; gap: 0.5rem;">
                 <input type="radio" name="role_name" value="restaurant_owner" checked>
                 <div>
-                  <div style="font-weight: 700; font-size: 0.85rem;">🍳 Cloud Kitchen</div>
+                  <div style="font-weight: 700; font-size: 0.85rem;">Cloud Kitchen</div>
                   <div style="font-size: 0.7rem; color: var(--text-muted);">Pool orders</div>
                 </div>
               </label>
@@ -81,7 +81,7 @@ export function renderAuthPage() {
               <label style="border: 1px solid var(--border-dark); padding: 0.75rem; border-radius: var(--radius-md); cursor: pointer; display: flex; align-items: center; gap: 0.5rem;">
                 <input type="radio" name="role_name" value="supplier">
                 <div>
-                  <div style="font-weight: 700; font-size: 0.85rem;">📦 Supplier</div>
+                  <div style="font-weight: 700; font-size: 0.85rem;">Supplier</div>
                   <div style="font-size: 0.7rem; color: var(--text-muted);">List bulk offers</div>
                 </div>
               </label>
@@ -100,10 +100,10 @@ export function renderAuthPage() {
           </p>
           <div style="display: flex; gap: 0.5rem; justify-content: center;">
             <button id="quick-demo-kitchen" class="btn btn-outline btn-sm">
-              🍳 Kitchen A Demo
+              Kitchen A Demo
             </button>
             <button id="quick-demo-supplier" class="btn btn-outline btn-sm">
-              📦 Fresh Foods Supplier Demo
+              Fresh Foods Supplier Demo
             </button>
           </div>
         </div>
@@ -167,7 +167,7 @@ export function bindAuthEvents(router) {
     try {
       const data = await api.login(email, password);
       store.setUser(data.user, data.token);
-      showAlert('✓ Signed in successfully. Redirecting...', false);
+      showAlert('Signed in successfully. Redirecting...', false);
 
       setTimeout(() => {
         const dest = data.user.roles.includes('supplier') ? '/supplier/dashboard' : '/dashboard';
@@ -197,7 +197,7 @@ export function bindAuthEvents(router) {
 
     try {
       const res = await api.register(username, email, password, [role]);
-      showAlert('✓ Account created! Signing in...', false);
+      showAlert('Account created! Signing in...', false);
       const loginData = await api.login(email, password);
       store.setUser(loginData.user, loginData.token);
 

@@ -12,7 +12,7 @@ export function renderKitchenProfilePage() {
       <div class="card">
         <div class="card-header">
           <div>
-            <h2 class="card-title">🍳 Cloud Kitchen Profile</h2>
+            <h2 class="card-title">Cloud Kitchen Profile</h2>
             <p class="card-subtitle">Set your GPS coordinates to discover buying pools within your 5 km cluster</p>
           </div>
         </div>

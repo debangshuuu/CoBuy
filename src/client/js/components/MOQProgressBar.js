@@ -19,7 +19,7 @@ export function renderMOQProgressBar({ currentQty, targetMoq, unitOfMeasure, sta
           <strong>${current.toFixed(1)}</strong> of <strong>${target.toFixed(1)} ${unitOfMeasure}</strong> pooled
         </span>
         <span style="color: ${isFulfilled ? 'var(--primary)' : 'var(--text-secondary)'};">
-          ${pct}% ${isFulfilled ? '✓ UNLOCKED' : ''}
+          ${pct}% ${isFulfilled ? 'UNLOCKED' : ''}
         </span>
       </div>
 
@@ -31,7 +31,7 @@ export function renderMOQProgressBar({ currentQty, targetMoq, unitOfMeasure, sta
       <div class="moq-progress-footer">
         <span>
           ${isFulfilled 
-            ? '🎉 <strong>Wholesale MOQ unlocked!</strong> Ready for procurement.'
+            ? '<strong>Wholesale MOQ unlocked!</strong> Ready for procurement.'
             : `Need <strong>${remaining} ${unitOfMeasure}</strong> more to unlock wholesale pricing`}
         </span>
         <span class="badge ${isFulfilled ? 'badge-status-fulfilled' : 'badge-status-active'}">

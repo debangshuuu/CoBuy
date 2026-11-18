@@ -10,7 +10,7 @@ export function renderSupplierProfilePage() {
       <div class="card">
         <div class="card-header">
           <div>
-            <h2 class="card-title">📦 Wholesale Supplier Profile</h2>
+            <h2 class="card-title">Wholesale Supplier Profile</h2>
             <p class="card-subtitle">Manage company info and central warehouse coordinates</p>
           </div>
         </div>

@@ -15,7 +15,7 @@ export async function renderPoolDiscoveryPage() {
     <div class="container">
       <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem;">
         <div>
-          <h1 style="font-size: 1.85rem; font-weight: 800;">📍 Discover Active Buying Pools</h1>
+          <h1 style="font-size: 1.85rem; font-weight: 800;">Discover Active Buying Pools</h1>
           <p style="color: var(--text-secondary); margin-top: 0.25rem;">
             Showing bulk deals within <strong>5.0 km</strong> of ${store.location.address}
           </p>

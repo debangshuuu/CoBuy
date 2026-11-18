@@ -13,7 +13,7 @@ export async function renderOrdersPage() {
     <div class="container">
       <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem;">
         <div>
-          <h1 style="font-size: 1.85rem; font-weight: 800;">📋 My Kitchen's Micro-Orders</h1>
+          <h1 style="font-size: 1.85rem; font-weight: 800;">My Kitchen's Micro-Orders</h1>
           <p style="color: var(--text-secondary); margin-top: 0.25rem;">
             Track your pledged quantities, pooling progress, and payment settlements
           </p>
@@ -72,7 +72,7 @@ export async function renderOrdersPage() {
                     </td>
                     <td>
                       ${isPaid ? `
-                        <span style="color: var(--primary); font-size: 0.85rem; font-weight: 600;">✓ Settled</span>
+                        <span style="color: var(--primary); font-size: 0.85rem; font-weight: 600;">Settled</span>
                       ` : `
                         <button class="btn btn-outline btn-sm btn-pay" data-order-id="${o.orderId}">
                           Pay ₹${o.pledgedAmount}
@@ -108,7 +108,7 @@ export function bindOrdersEvents() {
       const orderId = e.target.getAttribute('data-order-id');
       alert(`Payment simulated for micro-order ${orderId}. Status updated to PAID.`);
       // Update UI state
-      e.target.parentElement.innerHTML = '<span style="color: var(--primary); font-size: 0.85rem; font-weight: 600;">✓ Settled</span>';
+      e.target.parentElement.innerHTML = '<span style="color: var(--primary); font-size: 0.85rem; font-weight: 600;">Settled</span>';
     });
   });
 }

@@ -15,7 +15,7 @@ export async function renderCreatePoolPage() {
       <div class="card">
         <div class="card-header">
           <div>
-            <h2 class="card-title">🚀 Launch Buying Pool</h2>
+            <h2 class="card-title">Launch Buying Pool</h2>
             <p class="card-subtitle">Open a collective purchasing pool for local cloud kitchens</p>
           </div>
         </div>

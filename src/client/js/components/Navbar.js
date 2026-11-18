@@ -29,7 +29,7 @@ export function renderNavbar() {
     <header class="navbar">
       <div class="container navbar-inner">
         <a href="#/dashboard" class="brand">
-          🥦 CoBuy
+          CoBuy
           <span class="brand-badge">B2B POOLING</span>
         </a>
 
@@ -38,14 +38,19 @@ export function renderNavbar() {
         </ul>
 
         <div class="nav-actions">
+          <!-- Theme Toggle (plain text, no emoji) -->
+          <button id="btn-theme-toggle" class="btn btn-outline btn-sm" aria-label="Toggle theme" title="Toggle theme">
+            <span id="theme-toggle-text">Theme</span>
+          </button>
+
           ${user ? `
-            <span class="badge ${role === 'supplier' ? 'badge-role-supplier' : 'badge-role-kitchen'}">
-              ${role === 'supplier' ? '📦 Supplier' : '🍳 Cloud Kitchen'}
+            <span class="badge badge-role-${role === 'supplier' ? 'supplier' : 'kitchen'}">
+              ${role === 'supplier' ? 'Supplier' : 'Cloud Kitchen'}
             </span>
 
             <!-- Quick Role Switcher for local dev & viva demo -->
             <button id="btn-toggle-role" class="btn btn-outline btn-sm" title="Toggle role for testing">
-              ⇄ Switch Role
+              Switch Role
             </button>
 
             <button id="btn-logout" class="btn btn-outline btn-sm">
@@ -61,6 +66,29 @@ export function renderNavbar() {
 }
 
 export function bindNavbarEvents(router) {
+  // Theme toggle
+  const html = document.documentElement;
+  const themeBtn = document.getElementById('btn-theme-toggle');
+  const themeText = document.getElementById('theme-toggle-text');
+
+  function updateThemeUI(theme) {
+    if (themeText) {
+      themeText.textContent = theme === 'dark' ? 'Light Mode' : 'Dark Mode';
+    }
+  }
+
+  const currentTheme = html.dataset.theme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  updateThemeUI(currentTheme);
+
+  themeBtn?.addEventListener('click', () => {
+    const next = html.dataset.theme === 'dark' ? 'light' : 'dark';
+    html.dataset.theme = next;
+    try {
+      localStorage.setItem('cobuy-theme', next);
+    } catch (e) {}
+    updateThemeUI(next);
+  });
+
   const btnLogout = document.getElementById('btn-logout');
   if (btnLogout) {
     btnLogout.addEventListener('click', () => {
@@ -79,4 +107,3 @@ export function bindNavbarEvents(router) {
     });
   }
 }
-
